@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Kiran Academy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fb;
+            color: #333;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            background-color: #173b7a;
+            padding: 15px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffd43b;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #ffd43b;
+        }
+
+
+        /* ================= HOME ================= */
+
+        .hero {
+            min-height: 500px;
+
+            background:
+                linear-gradient(
+                    rgba(23, 59, 122, 0.85),
+                    rgba(23, 59, 122, 0.85)
+                ),
+                url("https://images.unsplash.com/photo-1523240795612-9a054b0db644")
+                center/cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffd43b;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            background-color: #ffd43b;
+            color: #173b7a;
+
+            padding: 13px 25px;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: white;
+        }
+
+
+        /* ================= COMMON SECTION ================= */
+
+        section {
+            padding: 60px 8%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            font-size: 32px;
+            color: #173b7a;
+        }
+
+        .title p {
+            margin-top: 10px;
+            color: #666;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            color: #173b7a;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+        }
+
+        .about-box {
+            flex: 1;
+
+            background-color: #173b7a;
+            color: white;
+
+            padding: 40px;
+
+            border-radius: 12px;
+
+            text-align: center;
+        }
+
+        .about-box h3 {
+            font-size: 40px;
+            color: #ffd43b;
+        }
+
+
+        /* ================= COURSES ================= */
+
+        .courses {
+            display: flex;
+
+            gap: 25px;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+        }
+
+        .course {
+            background-color: white;
+
+            width: 280px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+        .course:hover {
+            transform: translateY(-8px);
+        }
+
+        .course h3 {
+            color: #173b7a;
+            margin-bottom: 15px;
+        }
+
+        .course p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            background-color: #eaf0ff;
+        }
+
+        .feature-container {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            background-color: white;
+
+            width: 220px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 10px;
+        }
+
+        .feature h3 {
+            color: #173b7a;
+            margin-bottom: 10px;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact-form {
+            max-width: 600px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+
+            resize: none;
+        }
+
+        .contact-form button {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            background-color: #173b7a;
+
+            color: white;
+
+            font-size: 16px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0d2855;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background-color: #173b7a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer span {
+            color: #ffd43b;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <div class="logo">
+            Kiran <span>Academy</span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#courses">Courses</a>
+            </li>
+
+            <li>
+                <a href="#features">Features</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section class="hero" id="home">
+
+        <div>
+
+            <h1>
+                Welcome to
+                <span>Kiran Academy</span>
+            </h1>
+
+            <p>
+                Learn Today, Lead Tomorrow
+            </p>
+
+            <a href="#courses" class="btn">
+                Explore Courses
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <div class="title">
+
+            <h2>
+                About Kiran Academy
+            </h2>
+
+            <p>
+                Building knowledge and confidence
+                for a better future.
+            </p>
+
+        </div>
+
+
+        <div class="about">
+
+            <div class="about-text">
+
+                <h2>
+                    Why Choose Kiran Academy?
+                </h2>
+
+                <p>
+
+                    Kiran Academy is an educational
+                    platform focused on providing
+                    quality learning and practical
+                    knowledge.
+
+                    Our goal is to help students
+                    understand concepts easily and
+                    develop useful skills for their
+                    academic and professional future.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>100+</h3>
+
+                <p>
+                    Learning Resources
+                </p>
+
+                <br>
+
+                <h3>50+</h3>
+
+                <p>
+                    Practice Topics
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSES ================= -->
+
+    <section id="courses">
+
+        <div class="title">
+
+            <h2>
+                Our Courses
+            </h2>
+
+            <p>
+                Choose a course and start learning.
+            </p>
+
+        </div>
+
+
+        <div class="courses">
+
+
+            <div class="course">
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Learn HTML, CSS and JavaScript
+                    to create modern websites.
+                </p>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>
+                    Programming
+                </h3>
+
+                <p>
+                    Learn programming concepts
+                    using C, C++ and Python.
+                </p>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>
+                    Database & SQL
+                </h3>
+
+                <p>
+                    Learn databases, MySQL and
+                    SQL queries step by step.
+                </p>
+
+            </div>
+
+
+            <div class="course">
+
+                <h3>
+                    Computer Fundamentals
+                </h3>
+
+                <p>
+                    Understand basic computer
+                    concepts and technologies.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features" id="features">
+
+        <div class="title">
+
+            <h2>
+                Our Features
+            </h2>
+
+            <p>
+                Everything you need for better learning.
+            </p>
+
+        </div>
+
+
+        <div class="feature-container">
+
+
+            <div class="feature">
+
+                <h3>
+                    📚 Easy Learning
+                </h3>
+
+                <p>
+                    Simple explanations for
+                    difficult topics.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    💻 Practical Skills
+                </h3>
+
+                <p>
+                    Learn through practical
+                    examples.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    📝 Practice
+                </h3>
+
+                <p>
+                    Practice questions and
+                    exercises.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    🎓 Student Focused
+                </h3>
+
+                <p>
+                    Learning designed according
+                    to student needs.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <div class="title">
+
+            <h2>
+                Contact Us
+            </h2>
+
+            <p>
+                Have a question? Send us a message.
+            </p>
+
+        </div>
+
+
+        <div class="contact-form">
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Enter Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Enter Your Email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    placeholder="Enter Your Subject"
+                >
+
+                <textarea
+                    placeholder="Write your message">
+                </textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026
+            <span>Kiran Academy</span>.
+            All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
+
